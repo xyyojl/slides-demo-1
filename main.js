@@ -13,38 +13,27 @@
  */
 $('.images > img:nth-child(1)').addClass('current');
 $('.images > img:nth-child(2)').addClass('enter');
-setTimeout(()=>{
-    $('.images > img:nth-child(1)').removeClass('current').addClass('leave')
+$('.images > img:nth-child(3)').addClass('enter');
+$('.images > img:nth-child(4)').addClass('enter');
+$('.images > img:nth-child(5)').addClass('enter');
+let n = 1
+setInterval(() => {
+    $(`.images > img:nth-child(${manageData(n)})`).removeClass('current').addClass('leave')
         .one('transitionend',(e) => {
-            $(e.currentTarget).removeClass('leave').addClass('enter');
+            $(e.currentTarget).removeClass('leave').addClass('enter')
         })
-    $('.images > img:nth-child(2)').removeClass('enter').addClass('current')    
+    $(`.images > img:nth-child(${manageData(n+1)})`).removeClass('enter').addClass('current')
+    n += 1
 },3000)
-setTimeout(()=>{
-    $('.images > img:nth-child(2)').removeClass('current').addClass('leave')
-        .one('transitionend',(e) => {
-            $(e.currentTarget).removeClass('leave').addClass('enter');
-        })
-    $('.images > img:nth-child(3)').removeClass('enter').addClass('current')    
-},6000)
-setTimeout(()=>{
-    $('.images > img:nth-child(3)').removeClass('current').addClass('leave')
-        .one('transitionend',(e) => {
-            $(e.currentTarget).removeClass('leave').addClass('enter');
-        })
-    $('.images > img:nth-child(4)').removeClass('enter').addClass('current')    
-},9000)
-setTimeout(()=>{
-    $('.images > img:nth-child(4)').removeClass('current').addClass('leave')
-        .one('transitionend',(e) => {
-            $(e.currentTarget).removeClass('leave').addClass('enter');
-        })
-    $('.images > img:nth-child(5)').removeClass('enter').addClass('current')    
-},12000)
-setTimeout(()=>{
-    $('.images > img:nth-child(5)').removeClass('current').addClass('leave')
-        .one('transitionend',(e) => {
-            $(e.currentTarget).removeClass('leave').addClass('enter');
-        })
-    $('.images > img:nth-child(1)').removeClass('enter').addClass('current')    
-},15000)
+
+function manageData(n){
+    if(n>5){
+        n = n % 5;
+        if(n === 0){
+            n === 5
+        }
+    }
+    return n
+}
+
+
