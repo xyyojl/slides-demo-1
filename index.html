@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>无缝轮播-初尝试</title>
+    <title>无缝轮播</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="window">
-        <div class="images">
+        <div class="images" id="slides">
             <img src="1.png" alt="图片" width="400" height="300">
             <img src="2.png" alt="图片" width="400" height="300">
             <img src="3.png" alt="图片" width="400" height="300">
-            <img src="4.png" alt="图片" width="400" height="300">
-            <img src="5.png" alt="图片" width="400" height="300">
+            <!-- <img src="4.png" alt="图片" width="400" height="300">
+            <img src="5.png" alt="图片" width="400" height="300"> -->
         </div>
+    </div>
+    <div id="buttonWrapper" style="text-align: center;">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
     </div>
 
     <!-- 记得jquery.js要放在main.js之前 -->
